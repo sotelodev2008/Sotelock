@@ -1,4 +1,3 @@
-Markdown
 # Sotelock - Auto-escritor de Contraseñas / Password Auto-typer
 
 <div align="center">
@@ -12,21 +11,21 @@ Markdown
 
 ## ¿Qué es esto? / What is this?
 
-**🇪🇸 Español:** Es como un bloc de notas secreto que escribe por ti. Guardas tus contraseñas y correos dentro, y cuando los necesitas, el programa los escribe solo en la pantalla. Así no tienes que memorizarlos ni escribirlos a mano donde alguien pueda verlos.
+**🇪🇸 Español:** Programa simple que escribe automáticamente tus contraseñas o emails para que no tengas que memorizarlas, ni escribirlas en público.
 
-**🇬🇧 English:** It's like a secret notepad that types for you. You store your passwords and emails inside, and when you need them, the program types them automatically on screen. This way you don't have to memorize them or type them manually where someone might see.
+**🇬🇧 English:** Simple script to automatically type your passwords and emails so you don't have to memorize them, or type them in public.
 
 ---
 
-## 📑 Índice / Table of Contents
+## 📑 Índice / Index
 
 **Contenido en Español:**
 - [Requisitos](#requisitos)
-- [Instalación](#instalación)
-  - [Windows](#windows-instalación)
-  - [Linux](#linux-instalación)
-- [Configuración](#configuración)
-- [Cómo usar](#cómo-usar)
+- [Instalación](#instalacion)
+  - [Windows](#windows-instalacion)
+  - [Linux](#linux-instalacion)
+- [Configuración](#configuracion)
+- [Cómo usar](#como-usar)
   - [Windows](#windows-uso)
   - [Linux](#linux-uso)
 - [Seguridad](#seguridad)
@@ -54,22 +53,22 @@ Markdown
 
 Necesitas dos cosas antes de empezar:
 
-1. **Python** (el programa que hace funcionar este script)
-2. **El archivo `sotelock.py`** (descargado en tu computadora)
+1. **Python** (el programa y lenguaje de programación que hace funcionar este script).
+2. **El archivo `sotelock.py`** (descargado en tu ordenador).
 
-## Instalación
+## Instalacion
 
-### Windows (Instalación)
+### Windows (Instalacion)
 
 1. **Descarga Python:**
    - Ve a: https://www.python.org/downloads/
-   - Descarga la última versión
-   - **Importante:** Al instalar, marca la casilla que dice **"Add Python to PATH"**
-   - Dale a "Install Now"
+   - Descarga la última versión.
+   - **Importante:** Al instalar, marca la casilla que dice **"Add Python to PATH"**.
+   - Dale a "Install Now".
 
 2. **Instala las dependencias:**
-   - Presiona la tecla `Windows` + `R`
-   - Escribe `cmd` y dale a Enter (se abre una ventana negra)
+   - Presiona la tecla `Windows` + `R`.
+   - Escribe `cmd` y dale a Enter (se abre una ventana negra).
    - Escribe este comando y espera:
      ```bash
      pip install pyautogui
@@ -79,15 +78,15 @@ Necesitas dos cosas antes de empezar:
      python -m pip install pyautogui
      ```
 
-### Linux (Instalación)
+### Linux (Instalacion)
 
 1. **Verifica si tienes Python:**
-   - Abre la terminal (busca "Terminal" en tu menú o presiona Ctrl + Alt + T)
+   - Abre la terminal (busca "Terminal" en tu menú o presiona Ctrl + Alt + T).
    - Escribe:
      ```bash
      python3 --version
      ```
-   - Si te muestra un número (ej: 3.8.10), ya lo tienes. Si no, instálalo desde tu gestor de paquetes.
+   - Si te muestra un número (ej: 3.8.10), ya lo tienes. Si no, instálalo desde tu gestor de paquetes (apt, pacman, etc).
 
 2. **Instala las dependencias:**
    - En la terminal escribe:
@@ -114,11 +113,11 @@ Necesitas dos cosas antes de empezar:
      pip3 install pyautogui
      ```
 
-## Configuración
+## Configuracion
 
-Abre el archivo `sotelock.py` con cualquier editor de texto:
-- **Windows:** Clic derecho → "Abrir con" → Bloc de notas
-- **Linux:** Clic derecho → "Abrir con" → Editor de texto, o en terminal: `nano sotelock.py`
+Abre el archivo `sotelock.py` con cualquier editor de texto (Preferiblemente un editor de código compatible con Python como VS-Code):
+- **Windows:** Clic derecho → "Abrir con" → Bloc de notas.
+- **Linux:** Clic derecho → "Abrir con" → Editor de texto, o en terminal: `nano sotelock.py`.
 
 ### Paso 1: Pon tus contraseñas
 Busca esta sección y cambia los ejemplos por tus datos reales:
@@ -129,265 +128,259 @@ password_db = [
     sotelock("Gmail", "aquí pones otra contraseña"),
     sotelock("Banco", "tu_clave_secreta"),
 ]
-Paso 2: Pon tus correos
+```
+
+### Paso 2: Pon tus correos
 Busca esta sección y haz lo mismo:
 
-Python
+```python
 mail_db = [
     sotelock("Personal", "tuemail@gmail.com"),
     sotelock("Trabajo", "trabajo@empresa.com"),
 ]
-Paso 3: Cambia la pregunta secreta
+```
+
+### Paso 3: Cambia la pregunta secreta
 Busca esta línea:
 
-Python
+```python
 if letra == "e":
-Cambia la "e" por tu respuesta secreta. Por ejemplo, si pones "madrid", tendrás que escribir madrid para entrar.
+```
+
+Cambia la `"e"` por tu respuesta secreta. Por ejemplo, si pones `"madrid"`, tendrás que escribir madrid para entrar.
 
 También cambia la pregunta que está unas líneas arriba:
 
-Python
+```python
 print("    Entonces, responde a esta pregunta, ¿'Cómo se llama tu perro'?")
-Guarda el archivo (Ctrl + S).
+```
 
-Cómo usar
-Windows (Uso)
-Abre la carpeta donde guardaste sotelock.py
+Guarda el archivo (`Ctrl + S`).
 
-Haz doble clic en el archivo
+---
 
-Si se abre y se cierra rápido, haz esto:
+## Como usar
 
-Abre la terminal (Windows + R, escribe cmd)
+### Windows (Uso)
 
-Escribe cd (con un espacio al final)
+1. Abre la carpeta donde guardaste el archivo `sotelock.py`.
+2. Haz clic en la barra de direcciones de la carpeta superior, escribe `cmd` y presiona Enter.
+3. Ejecuta el script escribiendo el siguiente comando:
+   ```bash
+   python sotelock.py
+   ```
 
-Arrastra la carpeta donde está el archivo a la ventana negra
+### Linux (Uso)
 
-Dale a Enter
+1. Abre tu terminal favorita.
+2. Navega hasta el directorio de la descarga usando `cd` (ejemplo: `cd Downloads`).
+3. Ejecuta el archivo utilizando Python 3:
+   ```bash
+   python3 sotelock.py
+   ```
+4. *(Opcional)* Si quieres, cámbiale los permisos para que solo tú puedas acceder y ejecutar el archivo:
+   ```bash
+   chmod +700 ./sotelock.py
+   ```
 
-Escribe: python sotelock.py
+---
 
-Linux (Uso)
-Abre la terminal
+### 🕹️ Instrucciones de ejecución
 
-Ve a la carpeta donde está el archivo:
+1. **Responde la pregunta secreta** (la que configuraste previamente en el archivo).
+2. **Verás el siguiente menú en pantalla**:
+   * **Pulsa 1**: Para escribir un correo.
+   * **Pulsa 2**: Para escribir una contraseña.
+   * **Pulsa 3**: Para salir del programa.
+3. **Elige cuál quieres escribir** introduciendo su número correspondiente y presionando `Enter`.
+4. **¡Sé rápido!** Tienes exactamente **3 segundos** para hacer clic con el ratón en la casilla o lugar donde quieras que el programa escriba (por ejemplo, el campo de texto de una página web).
+5. El programa escribirá automáticamente tus credenciales.
 
-Bash
-cd /ruta/a/la/carpeta
-(Puedes escribir cd y arrastrar la carpeta a la terminal)
+#### 📧 Sobre el símbolo @ en los correos
+Cuando eliges la opción de un correo, el programa escribirá la parte anterior al símbolo `@`, se detendrá y te pedirá que escribas tú la `@` manualmente. **Esto es un comportamiento normal de seguridad**. Una vez que escribas la `@`, el script continuará automáticamente con el resto del dominio (ej: `gmail.com`).
 
-Dale permisos de ejecución (solo la primera vez):
+---
 
-Bash
-chmod +x sotelock.py
-Ejecuta el programa:
+## Seguridad
 
-Bash
-python3 sotelock.py
-Una vez abierto el programa:
-Responde la pregunta secreta (la que configuraste antes)
+> [!CAUTION]
+> ### ⚠️ IMPORTANTE - Lee esto atentamente:
+>
+> * **No subas este archivo a Internet** (GitHub, Google Drive, etc.) si contiene tus contraseñas reales escritas dentro.
+> * **Texto plano**: Las contraseñas se guardan en texto legible. Cualquiera con acceso físico o remoto a tu ordenador que abra el archivo podrá leerlas.
+> * **Uso local**: Mantén este archivo guardado única y estrictamente en tu computadora de uso personal.
+> * **Protección en Linux**: Puedes proteger el archivo restringiendo los accesos de otros usuarios del sistema con el siguiente comando:
+>   ```bash
+>   chmod 600 sotelock.py
+>   ```
 
-Verás un menú:
+<!-- ================================================== -->
+<!-- ALL ENGLISH CONTENT STARTS FROM HERE -->
+<!-- ================================================== -->
 
-Pulsa 1 para escribir un correo
+# 📙 Complete English Guide
 
-Pulsa 2 para escribir una contraseña
+## Requirements
 
-Pulsa 3 para salir
+You need two things before getting started:
 
-Elige cuál quieres escribir (poniendo su número y dando a Enter)
+1. **Python** (the program and programming language required to run this script).
+2. **The `sotelock.py` file** (downloaded to your computer).
 
-¡Rápido! Tienes 3 segundos para poner el ratón donde quieras que escriba (por ejemplo, en la casilla de contraseña de una página web)
+## Installation
 
-El programa escribe automáticamente
+### Windows (Installation)
 
-Sobre el símbolo @ en los correos
-Cuando eliges un correo, el programa escribe la parte antes del @, se detiene y te pide que escribas tú la @ manualmente. Esto es normal y es por seguridad. Tú escribes la @ y él sigue con el resto (gmail.com, etc.).
+1. **Download Python:**
+   - Go to: https://www.python.org/downloads/
+   - Download the latest version available.
+   - **Important:** During installation, make sure to check the box that says **"Add Python to PATH"**.
+   - Click on "Install Now".
 
-Seguridad
-⚠️ IMPORTANTE - Lee esto:
+2. **Install dependencies:**
+   - Press the `Windows` key + `R`.
+   - Type `cmd` and hit Enter (a black terminal window will open).
+   - Type the following command and wait:
+     ```bash
+     pip install pyautogui
+     ```
+   - If you encounter an error, try:
+     ```bash
+     python -m pip install pyautogui
+     ```
 
-No subas este archivo a Internet (GitHub, Google Drive, etc.) con tus contraseñas reales dentro
+### Linux (Installation)
 
-Las contraseñas se guardan en texto plano: cualquiera que abra el archivo puede leerlas
+1. **Verify if Python is installed:**
+   - Open your terminal (search for "Terminal" in your menu or press Ctrl + Alt + T).
+   - Type:
+     ```bash
+     python3 --version
+     ```
+   - If it displays a version number (e.g., 3.8.10), it is already installed. If not, install it using your package manager (apt, dnf, pacman, etc.).
 
-Mantén el archivo solo en tu computadora personal
+2. **Install dependencies:**
+   - In the terminal, type:
+     ```bash
+     pip3 install pyautogui
+     ```
+   - If pip3 is missing, install it first:
 
-En Linux: Puedes proteger el archivo para que solo tú puedas leerlo:
+     **Ubuntu/Debian:**
+     ```bash
+     sudo apt install python3-pip
+     pip3 install pyautogui
+     ```
 
-Bash
-chmod 600 sotelock.py
-📗 Complete Guide in English
-Requirements
-You need two things before starting:
+     **Fedora/CentOS:**
+     ```bash
+     sudo dnf install python3-pip
+     pip3 install pyautogui
+     ```
 
-Python (the program that makes this script work)
+     **Arch:**
+     ```bash
+     sudo pacman -S python-pip
+     pip3 install pyautogui
+     ```
 
-The file sotelock.py (downloaded on your computer)
+## Configuration
 
-Installation
-Windows (Installation)
-Download Python:
+Open the `sotelock.py` file with any text editor (preferably a Python-compatible code editor like VS-Code):
+- **Windows:** Right-click → "Open with" → Notepad.
+- **Linux:** Right-click → "Open with" → Text Editor, or via terminal: `nano sotelock.py`.
 
-Go to: https://www.python.org/downloads/
+### Step 1: Add your passwords
+Locate this section and replace the placeholder examples with your real credentials:
 
-Download the latest version
-
-Important: When installing, check the box that says "Add Python to PATH"
-
-Click "Install Now"
-
-Install dependencies:
-
-Press Windows key + R
-
-Type cmd and press Enter (a black window opens)
-
-Type this command and wait:
-
-Bash
-pip install pyautogui
-If you get an error, try:
-
-Bash
-python -m pip install pyautogui
-Linux (Installation)
-Check if you have Python:
-
-Open terminal (search "Terminal" in your menu or press Ctrl + Alt + T)
-
-Type:
-
-Bash
-python3 --version
-If it shows a number (e.g., 3.8.10), you have it. If not, install it from your package manager.
-
-Install dependencies:
-
-In the terminal type:
-
-Bash
-pip3 install pyautogui
-If pip3 doesn't exist, install it first:
-
-Ubuntu/Debian:
-
-Bash
-sudo apt install python3-pip
-pip3 install pyautogui
-Fedora/CentOS:
-
-Bash
-sudo dnf install python3-pip
-pip3 install pyautogui
-Arch:
-
-Bash
-sudo pacman -S python-pip
-pip3 install pyautogui
-Configuration
-Open the file sotelock.py with any text editor:
-
-Windows: Right click → "Open with" → Notepad
-
-Linux: Right click → "Open with" → Text Editor, or in terminal: nano sotelock.py
-
-Step 1: Add your passwords
-Find this section and change the examples to your real data:
-
-Python
+```python
 password_db = [
-    sotelock("Netflix", "your password here"),
-    sotelock("Gmail", "your other password here"),
+    sotelock("Netflix", "your_password_here"),
+    sotelock("Gmail", "another_password_here"),
     sotelock("Bank", "your_secret_key"),
 ]
-Step 2: Add your emails
-Find this section and do the same:
+```
 
-Python
+### Step 2: Add your emails
+Locate this section and do the same:
+
+```python
 mail_db = [
-    sotelock("Personal", "youremail@gmail.com"),
+    sotelock("Personal", "your-email@gmail.com"),
     sotelock("Work", "work@company.com"),
-]
-Step 3: Change the secret question
-Find this line:
+ ]
+```
 
-Python
+### Step 3: Change the secret security question
+Locate this line:
+
+```python
 if letra == "e":
-Change "e" to your secret answer. For example, if you put "london", you'll need to type london to enter.
+```
 
-Also change the question a few lines above:
+Change `"e"` to your own secret answer. For instance, if you set it to `"madrid"`, you will need to type madrid to grant script access.
 
-Python
-print("    Tell me, 'What is your dog's name'?")
-Save the file (Ctrl + S).
+Also, modify the question prompt a few lines above:
 
-How to Use
-Windows (Usage)
-Open the folder where you saved sotelock.py
+```python
+print("    Then, respond to this question, 'What is your dog's name'?")
+```
 
-Double-click the file
+Save the file (`Ctrl + S`).
 
-If it opens and closes quickly, do this:
+---
 
-Open terminal (Windows + R, type cmd)
+## How to Use
 
-Type cd (with a space at the end)
+### Windows (Usage)
 
-Drag the folder where the file is to the black window
+1. Open the folder where you saved the `sotelock.py` file.
+2. Click on the file explorer's address bar at the top, type `cmd`, and press Enter.
+3. Run the script by typing the following command:
+   ```bash
+   python sotelock.py
+   ```
 
-Press Enter
+### Linux (Usage)
 
-Type: python sotelock.py
+1. Open your preferred terminal.
+2. Navigate to your download directory using `cd` (e.g., `cd Downloads`).
+3. Run the script using Python 3:
+   ```bash
+   python3 sotelock.py
+   ```
+4. *(Optional)* If you want, restrict the file permissions so only you can access and execute it:
+   ```bash
+   chmod 700 ./sotelock.py
+   ```
 
-Linux (Usage)
-Open the terminal
+---
 
-Go to the folder where the file is:
+### 🕹️ Execution Instructions
 
-Bash
-cd /path/to/folder
-(You can type cd and drag the folder to the terminal)
+1. **Answer the secret question** (the one you previously set up inside the file).
+2. **You will see the following menu on your screen**:
+   * **Press 1**: To type an email address.
+   * **Press 2**: To type a password.
+   * **Press 3**: To exit the program.
+3. **Choose what you want to type** by entering its corresponding number and pressing `Enter`.
+4. **Be fast!** You have exactly **3 seconds** to click with your mouse cursor inside the input field where you want the program to type (for example, a password field on a website).
+5. The script will automatically type your credentials.
 
-Give it execution permission (only first time):
+#### 📧 Regarding the @ symbol in emails
+When you choose an email option, the program will type everything before the `@` symbol, pause, and ask you to type the `@` manually. **This is normal security behavior**. Once you type the `@`, the script will automatically resume typing the rest of the domain (e.g., `gmail.com`).
 
-Bash
-chmod +x sotelock.py
-Run the program:
+---
 
-Bash
-python3 sotelock.py
-Once the program is open:
-Answer the secret question (the one you configured before)
+## Security
 
-You'll see a menu:
-
-Press 1 to type an email
-
-Press 2 to type a password
-
-Press 3 to exit
-
-Choose which one you want to type (type its number and press Enter)
-
-Quick! You have 3 seconds to move your mouse where you want it to type (for example, in the password box of a website)
-
-The program types automatically
-
-About the @ symbol in emails
-When you choose an email, the program types the part before the @, stops and asks you to type the @ manually. This is normal and is for security. You type @ and it continues with the rest (gmail.com, etc.).
-
-Security
-⚠️ IMPORTANT - Read this:
-
-Don't upload this file to the Internet (GitHub, Google Drive, etc.) with your real passwords inside
-
-Passwords are stored in plain text: anyone opening the file can read them
-
-Keep the file only on your personal computer
-
-On Linux: You can protect the file so only you can read it:
-
-Bash
-chmod 600 sotelock.py
+> [!CAUTION]
+> ### ⚠️ IMPORTANT - Please read carefully:
+>
+> * **Do not upload this file to the Internet** (GitHub, Google Drive, etc.) if it contains your real passwords inside.
+> * **Plain text**: Passwords are stored in a readable format. Anyone with physical or remote access to your computer who opens this file can read them.
+> * **Local usage**: Keep this file stored strictly and exclusively on your personal computer.
+> * **Linux protection**: You can protect the file by restricting other system users' access with the following command:
+>   ```bash
+>   chmod 600 sotelock.py
+>   ```
