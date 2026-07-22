@@ -211,7 +211,7 @@ Cuando eliges la opción de un correo, el programa escribirá la parte anterior 
 > * **Uso local**: Mantén este archivo guardado única y estrictamente en tu computadora de uso personal.
 > * **Protección en Linux**: Puedes proteger el archivo restringiendo los accesos de otros usuarios del sistema con el siguiente comando:
 >   ```bash
->   chmod 600 sotelock.py
+>   chmod +700 sotelock.py
 >   ```
 
 <!-- ================================================== -->
@@ -351,7 +351,7 @@ Save the file (`Ctrl + S`).
    ```
 4. *(Optional)* If you want, restrict the file permissions so only you can access and execute it:
    ```bash
-   chmod 700 ./sotelock.py
+   chmod +700 ./sotelock.py
    ```
 
 ---
@@ -382,5 +382,5 @@ When you choose an email option, the program will type everything before the `@`
 > * **Local usage**: Keep this file stored strictly and exclusively on your personal computer.
 > * **Linux protection**: You can protect the file by restricting other system users' access with the following command:
 >   ```bash
->   chmod 600 sotelock.py
+>   chmod +700 sotelock.py
 >   ```
