@@ -76,7 +76,7 @@ def main(key=False):
         print("    This program is not allowed to be used by anyone who is not 'User', so, I'll ask you a question that only Sotelo may know, if your answer is correct, then you shall use this program, however if you fail, then, you shan't use this app whatsoever")
         print("    Tell me, 'Question'?")
         try:
-            letra = str(input("    Respuesta: "))
+            letra = str(input("    Response: "))
         except ValueError:
             if patience == 5:
                 print("I can see you did not undertand the concept of a name, a name is a group of characters, principally letter, that enable us to refer to someone or someting, so write a name, please")
@@ -149,7 +149,7 @@ def main(key=False):
     print("    3.Exit")
     print("")
     try:
-        option = int(input("    Opcion: "))
+        option = int(input("    Option: "))
         if option >= 4:
             print("    You stupid or something you can only use 2 numbers and you failed, press enter and let us begin again")
             input()
@@ -170,7 +170,7 @@ def main(key=False):
             print(f"    {num + 1}.{mail_db[num].service}")
         print(end="")
         try:
-            option = int(input("    Opcion: "))
+            option = int(input("    Option: "))
             if option > len(mail_db):
                 return 1
             writter(mail_db[option - 1].passwd)
