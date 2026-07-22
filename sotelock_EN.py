@@ -151,7 +151,7 @@ def main(key=False):
     try:
         option = int(input("    Option: "))
         if option >= 4:
-            print("    You stupid or something you can only use 2 numbers and you failed, press enter and let us begin again")
+            print("    You stupid or something you can only use 3 numbers and you still failed, press enter and let us begin again")
             input()
             main(True)
     except ValueError:
