@@ -74,7 +74,7 @@ def main(key=False):
 
         #Secret Password (Modify this strings as you want)
         print("    This program is not allowed to be used by anyone who is not 'User', so, I'll ask you a question that only Sotelo may know, if your answer is correct, then you shall use this program, however if you fail, then, you shan't use this app whatsoever")
-        print("    Tell me, 'Question'?")
+        print("    Tell me, 'Who is the one that encorage 'User' to start programming'?")
         try:
             letra = str(input("    Response: "))
         except ValueError:
