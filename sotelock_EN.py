@@ -13,7 +13,7 @@ password_db = [ #Write here your password and where to use it
     sotelock("Service2", "Password2")
 ]
 
-mail_db = [ #Write Hear your mail and for what you use it
+mail_db = [ #Write Here your mail and for what you use it
     sotelock("EmailService1", "noreply@mail1.com"),
     sotelock("EmailService2", "noreply@mail2.com")
 ]
