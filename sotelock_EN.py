@@ -1,6 +1,7 @@
 import pyautogui as auto
 import time
 from dataclasses import dataclass
+from sys import exit as getout
 
 
 @dataclass
@@ -13,7 +14,7 @@ password_db = [ #Write here your password and where to use it
     sotelock("Service2", "Password2")
 ]
 
-mail_db = [ #Write Here your mail and for what you use it
+mail_db = [ #Write Hear your mail and for what you use it
     sotelock("EmailService1", "noreply@mail1.com"),
     sotelock("EmailService2", "noreply@mail2.com")
 ]
@@ -103,18 +104,33 @@ def main(key=False):
             if patience == 1:
                 print("...")
                 input()
+                lock(attempts=attempts)                
             if patience == 0:
                 print("OK, fuck off")
                 input()
-                quit()
+                getout()
 
         if letra == "e": #Example
             del letra
             main(True)
         else:
             if attempts > 0:
-                pass
+                if attempts == 3:
+                    if patience == 5:
+                        print("    Yield my code, to claim your errors")
+                    else:
+                        print("    I still belive you could be [user], maybe you're in haste")
+                    input()
+                elif attempts == 2:
+                    print("    Ok, you're definely not [user], so, stop trying out to fell like a sorta hacker, 'coz you're actually not good at this whatsoever")
+                    input()
+                elif attempts == 1:
+                    print("    Didn't gave up already, may I remind you this is your last chance to 'SOMEHOW FELL LIKE A CRACKER' for once on your entire life")
+                    input()
+                attempts = attempts - 1
+                lock(attempts=attempts)
             else:
+                print("    Somehow, I clearly knew you weren't able to fullfil your dreams of being some kinda cracker")
                 quit()
 
     if key == False:
@@ -149,7 +165,7 @@ def main(key=False):
     print("    3.Exit")
     print("")
     try:
-        option = int(input("    Option: "))
+        option = int(input("    Opcion: "))
         if option >= 4:
             print("    You stupid or something you can only use 3 numbers and you still failed, press enter and let us begin again")
             input()
@@ -191,7 +207,7 @@ def main(key=False):
             print(f"    {num + 1}.{password_db[num].service}")
         print("")
         try:
-            option = int(input("    Opcion: "))
+            option = int(input("    Option: "))
             if option > len(password_db):
                 return 1
             writter(password_db[option - 1].passwd)
@@ -201,7 +217,7 @@ def main(key=False):
             main(True)
         main(True)
 
-    elif num == 3:
+    elif option == 3:
         print ("    Sayonara")
-        return 0
+        getout()
 main()
