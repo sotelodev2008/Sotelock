@@ -1,6 +1,7 @@
 import pyautogui as auto
 import time
 from dataclasses import dataclass
+from sys import exit as getout
 
 
 @dataclass
@@ -103,19 +104,31 @@ def main(key=False):
             if patience == 1:
                 print("...")
                 input()
+                lock(attempts=attempts)
             if patience == 0:
                 print("Jodete")
                 input()
-                quit()
+                getout()
 
         if letra == "e": #Ejemplo
             del letra
             main(True)
         else:
+            attempts = attempts - 1
             if attempts > 0:
-                pass
+                if attempts == 3:
+                    print("Aún creo que puedes ser [Usuario], puede que estes en un apuro, prueba otra vez")
+                    input()
+                if attempts == 2:
+                    print("Vale, Definitivamente no eres [Usuario], entonces, deja de intentar sentirte como una especie de hacker, pues de hecho no eres bueno en esto en absoluto")
+                    input()
+                if attempts == 1:
+                    print("Aún no te has rendido, deberia recordarte que esta es tu ultima oportunidad para 'SENTIRTE COMO UN CRACKER' for once on your entire life")
+                    input()
+                lock(attempts=attempts)
             else:
-                quit()
+                print("    Por algún motivo, sabia claramente que no serias capaz de completar tu sueño de ser una especie de cracker")
+                getout()
 
     if key == False:
         lock()
@@ -203,5 +216,5 @@ def main(key=False):
 
     elif num == 3:
         print ("    Sayonara")
-        return 0
+        getout()
 main()
