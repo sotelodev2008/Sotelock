@@ -2,8 +2,7 @@
 
 <div align="center">
 
-[![Python](https://img.shields.io/badge/Python-3.6+-blue.svg)](https://www.python.org/)
-[![Platform](https://img.shields.io/badge/Windows%20%7C%20Linux-lightgrey.svg)]()
+[![Python](https://img.shields.io/badge/Python-3.6+-blue.svg)](https://www.python.org/) [![Platform](https://img.shields.io/badge/Windows%20%7C%20Linux-lightgrey.svg)]() ![Última actualización](https://img.shields.io/badge/Last%20updated-July%202026-blue)
 
 </div>
 
