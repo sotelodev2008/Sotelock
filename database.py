@@ -17,7 +17,7 @@ def comprobation():
         service TEXT NOT NULL,
         passwd TEXT NOT NULL
     )
-    """)
+    """) # Crea una tabla si es que no existe y le dice que tenga 3 columnas, la primera el ID del dato, la segunda, un texto llamado servicio y la ultima otro texto llamado password
 
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS mail (
@@ -42,7 +42,7 @@ def password_db(service, passwd):
     cursor.execute("""
     INSERT INTO passwords (service, passwd) 
     VALUES (?, ?)
-    """, (service, passwd))
+    """, (service, passwd)) # rellena dentro de la tabla passwords una los valores service y passwd, la ? significa que cojera los valores externos que le demos
     
     # 3. Guardamos los cambios y cerramos
     exit_db(conexion)
@@ -62,11 +62,11 @@ def count_passwords():
     conexion, cursor = start()
     
     # 1. Traemos solo la columna 'service' de todas las filas
-    cursor.execute("SELECT service FROM passwords")
+    cursor.execute("SELECT service FROM passwords") # Busca todos los valores en la tabla que coincidan con service
     
     # 2. fetchall() trae TODAS las filas de la bandeja (no solo una)
     # Nos devolverá una lista de tuplas, por ejemplo: [('Netflix',), ('Spotify',)]
-    filas = cursor.fetchall()
+    filas = cursor.fetchall() # Todos los valores anteriormente seleccionados se guardan en la variable filas
     
     exit_db(conexion)
     
@@ -107,7 +107,7 @@ def get_password(service):
     conexion, cursor = start()
     
     # Buscamos el valor de la columna 'passwd' donde coincida el nombre del servicio
-    cursor.execute("SELECT passwd FROM passwords WHERE service = ?", (service,))
+    cursor.execute("SELECT passwd FROM passwords WHERE service = ?", (service,)) # Busca la columna de la tabla que coincida con el servicio y luego obtiene su contraseña
     resultado = cursor.fetchone() # fetchone() trae solo la primera fila encontrada
     
     exit_db(conexion)
