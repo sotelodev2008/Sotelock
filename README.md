@@ -8,13 +8,13 @@
 
 [🇬🇧 English](#-english-guide) | [🇪🇸 Español](#-guía-en-español)
 
-</div>
-
 ---
 
 ### To see older versions click [here](./Older_Versions/)
 
 ---
+
+</div>
 
 ## 📋 Table of Contents / Índice
 
