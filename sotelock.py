@@ -23,15 +23,13 @@ def access():
         pass
 
 class sotelock:
-    def __init__(self, passwd = None, argument = None, passwd_id = None):
+    def __init__(self, passwd = None):
         try:
             if passwd is None:
                 passwd = argv[1] == database.access()
         except IndexError:
             self.passwd = False
         self.passwd = passwd
-        self.argument = argument
-        self.passwd_id = passwd_id
         self.patience = 5
         self.attempts = 3
 
@@ -444,12 +442,8 @@ if len(argv) <= 1:
     sol = sotelock()
 elif len(argv) == 2:
     sol = sotelock(argv[1])
-elif len(argv) == 3:
-    sol = sotelock(argv[1], argv[2])
-elif len(argv) == 4:
-    sol = sotelock(argv[1], argv[2], argv[3])
 else:
-    print("You must write a minimum of one argument and a maximum of three.") # Opción por defecto si ejecutas solo "python archivo.py"
+    print("If you want to write arguments, you can only write one.") # Opción por defecto si ejecutas solo "python archivo.py"
     getout()
 
 try:
