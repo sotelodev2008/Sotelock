@@ -313,7 +313,7 @@ class sotelock:
                 else:
                     print("OK, Don't worry, repenting is normal")
                     input()
-                    main()
+                    self.main()
         if option == 2:
             print("\033[2J\033[3J\033[H")
             print("")
@@ -431,7 +431,7 @@ class sotelock:
                 else:
                     print("OK, Don't worry, repenting is normal")
                     input()
-                    main()
+                    self.main()
         if option == 3:
             profile = self.sotelo("Github profile", "https://github.com/sotelodev2008")
             print(f"    If you wanna, and you have time, check out my {profile}")
