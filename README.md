@@ -295,6 +295,7 @@ Sotelo - [@sotelodev2008](https://github.com/sotelodev2008)
 ---
 
 ## 📜 Licencia
+
 Proyecto personal. Úsalo, módificalo, pero no me culpes si olvidas tu contraseña maestra.
 
 **Cambios clave respecto al anterior:**
